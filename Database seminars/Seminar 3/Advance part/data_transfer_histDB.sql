@@ -31,8 +31,6 @@ FROM
     ) AS external_lesson(type_name VARCHAR, level_name VARCHAR, genre VARCHAR, instrument_type VARCHAR, price NUMERIC);
 
 
-	CREATE EXTENSION IF NOT EXISTS dblink;
-
 INSERT INTO student_lesson (student_id, lesson_id)
 SELECT *
 FROM 
