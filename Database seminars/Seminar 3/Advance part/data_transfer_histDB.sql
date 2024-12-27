@@ -1,10 +1,10 @@
 CREATE EXTENSION IF NOT EXISTS dblink;
--- replace user and password with system specific details
+-- replace dbname(with your non denormalised DB name), user and password with system specific details
 INSERT INTO student (personal_number, first_name, last_name, email_address)
 SELECT *
 FROM 
     dblink(
-        'dbname=sem3allqueries user=your_name password=your_password',
+        'dbname=your_DB user=your_name password=your_password',
         'SELECT personal_number, first_name, last_name, email_address 
          FROM person 
          WHERE id BETWEEN 16 AND 40'
@@ -16,7 +16,7 @@ INSERT INTO lesson (type_name, level_name, genre, instrument_type, price)
 SELECT *
 FROM 
     dblink(
-        'dbname=sem3allqueries user=your_name password=your_password',
+        'dbname=your_DB user=your_name password=your_password',
         'SELECT 
             l.type_name, 
             l.level_name, 
@@ -35,7 +35,7 @@ INSERT INTO student_lesson (student_id, lesson_id)
 SELECT *
 FROM 
     dblink(
-        'dbname=sem3allqueries user=your_name password=your_password',
+        'dbname=your_DB user=your_name password=your_password',
         'SELECT 
            s.id AS student_id, 
            COALESCE(il.lesson_id, sgl.lesson_id, se.lesson_id) AS lesson_id
