@@ -1,4 +1,6 @@
-**1.Project Description, the Soundgood Music School**__
+**1.Project Description, the Soundgood Music School**
+
+
 The purpose is to facilitate information handling and business transactions for the Soundgood music school company, by developing a database which handles all the school's data and also an application that handles the operations specified in sections 1.1-1.3.
 
 **1.1 Business Overview**
